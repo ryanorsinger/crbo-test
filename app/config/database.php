@@ -26,7 +26,7 @@ return array(
 	|
 	*/
 
-	'default' => 'pgsql',
+	'default' => 'mysql',
 
 	/*
 	|--------------------------------------------------------------------------
@@ -54,10 +54,10 @@ return array(
 
 		'mysql' => array(
 			'driver'    => 'mysql',
-			'host'      => 'localhost',
-			'database'  => 'forge',
-			'username'  => 'forge',
-			'password'  => '',
+            'host'      => $_ENV['MYSQL_HOSTNAME'],
+            'database'  => $_ENV['MYSQL_DATABASE'],
+            'username'  => $_ENV['MYSQL_USERNAME'],
+            'password'  => $_ENV['MYSQL_PASSWORD'],
 			'charset'   => 'utf8',
 			'collation' => 'utf8_unicode_ci',
 			'prefix'    => '',
@@ -65,22 +65,13 @@ return array(
 
 		'pgsql' => array(
 			'driver'   => 'pgsql',
-			'host'     => 'localhost',
-			'database' => 'forge',
-			'username' => 'forge',
-			'password' => '',
+            'host'      => $_ENV['PSQL_HOSTNAME'],
+            'database'  => $_ENV['PSQL_DATABASE'],
+            'username'  => $_ENV['PSQL_USERNAME'],
+            'password'  => $_ENV['PSQL_PASSWORD'],
 			'charset'  => 'utf8',
 			'prefix'   => '',
 			'schema'   => 'public',
-		),
-
-		'sqlsrv' => array(
-			'driver'   => 'sqlsrv',
-			'host'     => 'localhost',
-			'database' => 'database',
-			'username' => 'root',
-			'password' => '',
-			'prefix'   => '',
 		),
 
 	),
